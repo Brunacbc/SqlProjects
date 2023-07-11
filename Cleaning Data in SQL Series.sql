@@ -197,13 +197,8 @@ From RowNumCTE
 Where row_num > 1
 Order by PropertyAddress
 
-
-
 Select *
 From PortfolioProject.dbo.NashvilleHousing
-
-
-
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -217,34 +212,4 @@ ALTER TABLE PortfolioProject.dbo.NashvilleHousing
 DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 -----------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
