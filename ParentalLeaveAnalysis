@@ -1,0 +1,51 @@
+-- Which companies offer the most paid maternity leave in weeks? 
+
+SELECT 
+TOP 10
+Company,
+Paid_Maternity_Leave
+FROM parental_leave
+WHERE Paid_Maternity_Leave IS NOT NULL
+ORDER BY 
+Paid_Maternity_Leave desc
+
+
+-- Which companies offer the most paid paternity leave in weeks? 
+SELECT TOP 5
+Company,
+Paid_Paternity_Leave
+FROM parental_leave
+WHERE Paid_Paternity_Leave IS NOT NULL
+ORDER BY 
+Paid_Paternity_Leave desc
+
+Which companies offer the same parentalpaidleave for both genders?
+
+SELECT Company,
+Paid_Paternity_Leave,
+Paid_Maternity_Leave
+FROM parental_leave
+where Paid_Paternity_Leave = Paid_Maternity_Leave
+AND Paid_Paternity_Leave >0 
+AND Paid_Maternity_Leave >0
+order by Paid_Paternity_Leave desc,
+Paid_Maternity_Leave desc
+
+-- Is maternity leave typically longer than paternity leave? 
+
+select
+AVG(Paid_Maternity_Leave) as avg_Maternity_Leave,
+AVG(Paid_Paternity_Leave) avg_Paternity_Leave
+FROM parental_leave
+
+
+-- Are there noticable differences between industries? --
+
+select
+Industry,
+MAX(Paid_Paternity_Leave) as max_paid_paternity_leave,
+MAX(Paid_Maternity_Leave) as max_paid_maternity_leave
+FROM  parental_leave
+where Paid_Paternity_Leave IS NOT NULL AND Paid_Maternity_Leave IS NOT NULL
+GROUP BY Industry
+
