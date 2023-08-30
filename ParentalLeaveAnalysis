@@ -46,6 +46,10 @@ Industry,
 MAX(Paid_Paternity_Leave) as max_paid_paternity_leave,
 MAX(Paid_Maternity_Leave) as max_paid_maternity_leave
 FROM  parental_leave
-where Paid_Paternity_Leave IS NOT NULL AND Paid_Maternity_Leave IS NOT NULL
-GROUP BY Industry
+where 
+Paid_Paternity_Leave IS NOT NULL
+AND
+Paid_Maternity_Leave IS NOT NULL
+GROUP BY 
+Industry
 
